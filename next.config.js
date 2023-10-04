@@ -18,6 +18,9 @@ const getBuildTimeInfo = () => {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  env: {
+    NEXT_PUBLIC_BUILD_TIME: getBuildTimeInfo(), // layout.tsx, html 加個 data-build-info，方便確認目前的 build 日期
+  },
 };
 
 module.exports = nextConfig;
